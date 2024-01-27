@@ -18,7 +18,7 @@ public final class TpaaUI extends JavaPlugin {
         this.getCommand("opentpa").setExecutor((sender, command, label, args) -> {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                spigotMaster.notifyToClient(player, "tpaUI", "tpaUICS", "OpenTpaUI", new HashMap<>());
+                spigotMaster.notifyToClient(player, "tpaUI", "tpaUISS", "OpenTpaUI", new HashMap<>());
                 return true;
             }
             return false;
@@ -26,8 +26,8 @@ public final class TpaaUI extends JavaPlugin {
 
         spigotMaster = (SpigotMaster) getServer().getPluginManager().getPlugin("SpigotMaster");
         if (spigotMaster != null) {
-            spigotMaster.listenForEvent("tpaUI", "tpaUICS", "RequestPlayerList", this::onRequestPlayerList);
-            spigotMaster.listenForEvent("tpaUI", "tpaUICS", "PlayerTpaRequest", this::onPlayerTpaRequest);
+            spigotMaster.listenForEvent("tpaUI", "tpaUISS", "RequestPlayerList", this::onRequestPlayerList);
+            spigotMaster.listenForEvent("tpaUI", "tpaUISS", "PlayerTpaRequest", this::onPlayerTpaRequest);
         } else {
             getLogger().severe("没找到SpigotMaster插件，TpaaUI将不会工作.");
         }

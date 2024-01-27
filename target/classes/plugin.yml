@@ -1,0 +1,7 @@
+name: tpaaUI
+version: '1.0'
+main: com.neteasemc.tpaaui.TpaaUI
+commands:
+  opentpa:
+    description: 打开 TPA 交互界面
+    usage: /opentpa
